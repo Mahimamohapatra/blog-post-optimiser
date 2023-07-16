@@ -1,1 +1,1 @@
-# Angular-project-1
+# Optimised Blog Post Generator
