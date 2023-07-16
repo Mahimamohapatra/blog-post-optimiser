@@ -1,0 +1,14 @@
+<div class="chat-container">
+    <div class="default" *ngIf="messages.length === 0">
+        <p class="sender">Please enter content below</p>
+    </div>
+    <div class="message" *ngFor="let message of messages">
+      <p class="sender" [ngClass]="{'user': message.sender === 'User', 'bot': message.sender === 'Bot'}">{{ message.sender }}</p>
+      <p class="content" [ngClass]="{'user': message.sender === 'User', 'bot': message.sender === 'Bot'}" [innerHTML]="message.content"></p>
+    </div>
+</div>
+<div class="input-container">
+    <input type="text" [(ngModel)]="blogTitle" placeholder="Type your Blog..." (keydown.enter)="generateBlogPost()" />
+    <button (click)="generateBlogPost()">Send</button>
+</div>
+  
